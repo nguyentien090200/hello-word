@@ -1,5 +1,4 @@
-﻿SELECT *
-FROM CAUTHU;
+﻿
 
 SELECT *
 FROM HUANLUYENVIEN;
@@ -53,6 +52,9 @@ SELECT hlv.MAHLV, hlv.TENHLV, hlv.NGAYSINH, hlv.DIACHI, HLV_CLB.VAITRO, clb.TENC
 FROM HUANLUYENVIEN as hlv, HLV_CLB, QUOCGIA as qg, CAULACBO as clb
 WHERE hlv.MAHLV = HLV_CLB.MAHLV AND hlv.MAQG = qg.MAQG AND qg.TENQG LIKE N'Việt Nam' AND HLV_CLB.MACLB = clb.MACLB;
 -- 9a. Lấy tên 3 câu lạc bộ có điểm cao nhất sau vòng 3 năm 2009
+
+
+
 SELECT TOP 3 clb.TENCLB
 FROM CAULACBO as clb, BANGXH as bxh
 WHERE bxh.MACLB = clb.MACLB AND bxh.VONG = 3
