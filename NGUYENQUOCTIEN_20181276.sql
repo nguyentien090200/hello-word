@@ -11,7 +11,7 @@ SELECT *
 FROM SANVD;
 
 SELECT *
-FROM TRANDAU;
+
 
 SELECT *
 FROM HLV_CLB;
@@ -30,7 +30,8 @@ WHERE SO = 7 AND VITRI = N'Tiền vệ';
 SELECT TENHLV, NGAYSINH, DIACHI, DIENTHOAI
 FROM HUANLUYENVIEN;
 
---4a.Hiển thi thông tin tất cả các cầu thủ có quốc tịch Việt Nam thuộc câu lạc bộ Becamex Bình DươngSELECT ct.*
+--4a.Hiển thi thông tin tất cả các cầu thủ có quốc tịch Việt Nam thuộc câu lạc bộ Becamex Bình Dương
+SELECT ct.*
 FROM CAUTHU as ct, CAULACBO as clb
 WHERE ct.MACLB = clb.MACLB AND clb.TENCLB = N'Becamex Bình Dương';
 
@@ -44,7 +45,8 @@ SELECT ct.*
 FROM CAUTHU as ct, CAULACBO as clb, SANVD as svd
 WHERE ct.MACLB = clb.MACLB AND clb.MASAN = svd.MASAN AND svd.TENSAN = N'Sân Long An';
 
---7a.Cho biết kết quả (MATRAN, NGAYTD, TENSAN, TENCLB1, TENCLB2, KETQUA) các trận đấu vòng 2 của mùa bóng năm 2009SELECT td.MATRAN, td.NGAYTD, svd.TENSAN, clb1.TENCLB, clb2.TENCLB
+--7a.Cho biết kết quả (MATRAN, NGAYTD, TENSAN, TENCLB1, TENCLB2, KETQUA) các trận đấu vòng 2 của mùa bóng năm 2009
+SELECT td.MATRAN, td.NGAYTD, svd.TENSAN, clb1.TENCLB, clb2.TENCLB
 FROM TRANDAU as td, CAULACBO as clb1, CAULACBO as clb2, SANVD as svd
 WHERE td.VONG = 2 AND td.NAM = 2009 AND clb1.MACLB = td.MACLB1 AND clb2.MACLB = td.MACLB2 AND td.MASAN = svd.MASAN;
 
